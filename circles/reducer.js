@@ -21,7 +21,22 @@ const reducer = (state = initialState, action) => {
     // Handle actions here - make sure you don't mutate the state!
     const { type } = action;
 
-    // ACTION: Add a random circle
+    switch (type) {
+        case 'ADD_CIRCLE' :
+            //create new state
+            console.log('hello');
+            return [
+                ...state, //pull in the original state so it isn't mutated
+                {
+                    //radius: 20,
+                    radius: Math.floor(Math.random() * 100),
+                   // color: "#555999"
+                    color:'#'+Math.floor(Math.random()*16777215).toString(16)
+                }
+                
+            ];
 
-    return state;
+        default:
+            return state;
+    }
 }

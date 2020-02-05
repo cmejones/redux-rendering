@@ -7,3 +7,29 @@ dispatch({ type: null }); // Here we're making a call to dispatch() - this trigg
 
 // Write DOM event listeners here, make them dispatch actions to the Redux store 
 
+const likes = document.getElementById('sortLikes');
+//debugger;
+likes.addEventListener('click', (e) => {
+    e.preventDefault();
+    dispatch({
+        type: 'SORT_LIKES'   
+    });
+});
+
+const retweets = document.getElementById('sortRetweets'); 
+//debugger;
+retweets.addEventListener('click', (e) => {
+    e.preventDefault();
+    dispatch({
+        type: 'SORT_RETWEETS'   
+    });
+});
+
+const replies = document.getElementById('sortReplies');
+//debugger;
+replies.addEventListener('click', (e) => {
+    e.preventDefault();
+    dispatch({
+        type: 'SORT_REPLIES'   
+    });
+});
